@@ -4,11 +4,12 @@ import './styles.css';
 interface IProps {
   todo: string;
   setTodo: React.Dispatch<React.SetStateAction<string>>;
+  handleAdd: () => void;
 }
 
-const InputField = ({ todo, setTodo }: IProps) => {
+const InputField = ({ todo, setTodo, handleAdd }: IProps) => {
   return (
-    <form className="input">
+    <form className="input" onSubmit={handleAdd}>
       <input
         type="input"
         placeholder="Enter a task"
