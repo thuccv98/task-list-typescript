@@ -4,7 +4,7 @@ import './styles.css';
 interface IProps {
   todo: string;
   setTodo: React.Dispatch<React.SetStateAction<string>>;
-  handleAdd: () => void;
+  handleAdd: (e: React.FormEvent) => void;
 }
 
 const InputField = ({ todo, setTodo, handleAdd }: IProps) => {
