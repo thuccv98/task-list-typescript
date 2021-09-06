@@ -56,7 +56,7 @@ const SingleTodo = ({ todo, todos, setTodos }: IProps) => {
         <span className="todos__single--text">{todo.todo}</span>
       )}
 
-      <div>
+      <div className="todos__icons">
         <span
           className="icon"
           onClick={() => {

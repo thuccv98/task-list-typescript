@@ -10,15 +10,24 @@ interface IProps {
 
 const TodoList = ({ todos, setTodos }: IProps) => {
   return (
-    <div className="todos">
-      {todos.map((todo) => (
-        <SingleTodo
-          todo={todo}
-          key={todo.id}
-          todos={todos}
-          setTodos={setTodos}
-        />
-      ))}
+    <div className="container">
+      <div className="todos">
+        <span className="todos__heading">Task List</span>
+        {todos.length > 0 ? (
+          todos
+            .map((todo) => (
+              <SingleTodo
+                todo={todo}
+                key={todo.id}
+                todos={todos}
+                setTodos={setTodos}
+              />
+            ))
+            .reverse()
+        ) : (
+          <span style={{ paddingTop: '15px' }}>Task is empty</span>
+        )}
+      </div>
     </div>
   );
 };
